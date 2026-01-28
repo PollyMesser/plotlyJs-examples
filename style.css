@@ -1,0 +1,56 @@
+.container {
+  display: grid;
+  grid-template-areas: 
+    "content menu";
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;  /* NEU: Explizite Zeilenhöhe */
+  gap: 3px;
+  background-color: dodgerblue;
+  padding: 5px;
+  max-width: 1200px;
+  margin: auto;
+  height: 90vh;
+}
+
+.container > div {  /* GEÄNDERT: Nur direkte Kinder stylen */
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container div.menu {
+    grid-area: menu;
+    text-align: right;
+}
+
+.container div.content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;  /* Innenabstand für Content */
+}
+
+.plot-container {
+    flex: 0 0 450px;  
+    width: 100%;
+    min-height: 400px;  
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;  
+}
+
+.plot-container > div {  /* NEU: Styles für dynamisch erstellte Plot-Divs */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+}
